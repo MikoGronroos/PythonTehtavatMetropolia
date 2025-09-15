@@ -18,4 +18,4 @@ kursori.execute(sql)
 
 tulos = kursori.fetchall()
 
-print(tulosmaakoodi)
+print(tulos)
