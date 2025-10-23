@@ -1,3 +1,5 @@
+import random
+
 class Auto:
     Rekisteritunnus = ""
     Huippunopeus = 0
@@ -20,9 +22,23 @@ class Auto:
         self.Rekisteritunnus = tunnus
         self.Huippunopeus = nopeus
 
-newAuto = Auto("ABC-123", 142)
+lista = []
 
-newAuto.kiihdyta(60)
-print(newAuto.TamanhetkinenNopeus)
-newAuto.kulje(1.5)
-print(newAuto.kuljettuMatka)
+for i in range(10):
+    lista.append(Auto(f"ABC-{i + 1}", random.randint(100,200)))
+kilpailuKaynnissa = True
+
+while kilpailuKaynnissa:
+    for i in range(len(lista)):
+        lista[i].kiihdyta(random.randint(-10, 15))
+        lista[i].kulje(1)
+        if lista[i].kuljettuMatka >= 10000:
+            kilpailuKaynnissa = False
+            break
+
+for i in range(len(lista)):
+    print(f"{lista[i].Rekisteritunnus}")
+    print(f"{lista[i].Huippunopeus}")
+    print(f"{lista[i].TamanhetkinenNopeus}")
+    print(f"{lista[i].kuljettuMatka}")
+    
