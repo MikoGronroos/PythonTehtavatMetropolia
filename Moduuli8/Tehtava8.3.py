@@ -19,6 +19,6 @@ def haeAsiat(icao):
     sql = f'select latitude_deg, longitude_deg from airport where airport.ident = \"{icao}\"';
     kursori.execute(sql)
     tulos = kursori.fetchall()
-    return (tulos[0])
+    return (tulos)
 
 print(f'{distance.distance(haeAsiat(icao01), haeAsiat(icao02)).km} km')
