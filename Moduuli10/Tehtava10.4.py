@@ -51,15 +51,6 @@ lista = []
 
 for i in range(10):
     lista.append(Auto(f"ABC-{i + 1}", random.randint(100,200)))
-#kilpailuKaynnissa = True
-
-#while kilpailuKaynnissa:
-#    for i in range(len(lista)):
-#        lista[i].kiihdyta(random.randint(-10, 15))
-#        lista[i].kulje(1)
-#        if lista[i].kuljettuMatka >= 10000:
-#            kilpailuKaynnissa = False
-#            break
 
 kilpailu = Kilpailu("Suuri romuralli", 8000, lista)
 
