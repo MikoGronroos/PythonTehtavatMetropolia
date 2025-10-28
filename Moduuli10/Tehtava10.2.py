@@ -24,7 +24,29 @@ class Hissi:
                 break
         return
 
-h = Hissi(1, 10)
+class Talo:
 
-h.siirry_kerrokseen(11)
-h.siirry_kerrokseen(0)
+    hissit = []
+
+    def __init__(self, alin, ylin, hissienLukumaara):
+        self.alin = alin
+        self.ylin = ylin
+        self.hissienLukumaara = hissienLukumaara
+        for i in range(hissienLukumaara):
+            self.hissit.append(Hissi(alin, ylin))
+
+    def aja_hissia(self, hissi, kerros):
+        ajettavaHissi = self.hissit[hissi]
+        ajettavaHissi.siirry_kerrokseen(kerros)
+
+t = Talo(1,10,2)
+
+t.aja_hissia(0, 5)
+print("-----")
+t.aja_hissia(1, 2)
+print("-----")
+t.aja_hissia(1, 0)
+print("-----")
+t.aja_hissia(0, 10)
+
+
